@@ -17,7 +17,11 @@ class BottomNavigation extends StatefulWidget {
 
 class _BottomNavigationState extends State<BottomNavigation> {
   int selectedItem = 0;
+
+  // list to update appbar title.
   final List<String> labels = ['Home', 'Challenges', 'Me', 'Market', 'More'];
+
+  // webview controllers
   List<Widget> tabs = [
     const HomeController(
       url: 'https://www.togoparts.com/',
@@ -94,13 +98,18 @@ class _BottomNavigationState extends State<BottomNavigation> {
           // ),
         ],
       ),
+
+      //Body to display tabs
       body: tabs[selectedItem],
+
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Theme.of(context).colorScheme.primary,
         selectedItemColor: Theme.of(context).colorScheme.onPrimary,
         unselectedItemColor: Theme.of(context).colorScheme.inversePrimary,
         type: BottomNavigationBarType.fixed,
         currentIndex: selectedItem,
+
+        // bottom navigation tab update state..
         onTap: (index) {
           setState(
             () {

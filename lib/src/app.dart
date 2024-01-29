@@ -35,6 +35,7 @@ class MyApp extends StatelessWidget {
           ],
           onGenerateTitle: (BuildContext context) =>
               AppLocalizations.of(context)!.appTitle,
+
           theme: ThemeData(
             fontFamily: GoogleFonts.poppins().fontFamily,
             colorScheme: const ColorScheme(
@@ -64,6 +65,8 @@ class MyApp extends StatelessWidget {
           ),
           darkTheme: ThemeData.dark(),
           themeMode: settingsController.themeMode,
+
+          //Routing based on route name
           onGenerateRoute: (RouteSettings routeSettings) {
             return MaterialPageRoute<void>(
               settings: routeSettings,
